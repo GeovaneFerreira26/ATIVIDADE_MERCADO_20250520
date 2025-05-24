@@ -105,7 +105,7 @@ def pesquisaritem():
     codigo = input("Digite Código para Pesquisa: ")
     if codigo in produtos:
         dados = produtos[codigo]
-        print(f"| Item: {dados['nome']:<20} | Sessão: {dados['sessao']:<18} | Quantidade: {dados['quantidade']:<5} | Preço Unid.: {dados['preco']} | Validade do Produto: {dados['validade']} |")
+        print(f"| Item: {dados['nome']:<20} | Sessão: {dados['sessao']:<18} | Quantidade: {dados['quantidade']:<5} | Preço Unid.: {dados['preco']:<6} | Validade do Produto: {dados['validade']} |")
     else:
         print("Produto não encontrado.")
     if isinstance(dados['validade'], str):
