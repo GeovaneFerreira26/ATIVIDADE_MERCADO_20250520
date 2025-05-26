@@ -29,9 +29,14 @@ def cadastro_produto():
         else:
             break
 
-    nome = input("Digite o nome do Produto: ").upper()
+    while True:
+        nome = input("Digite o nome do Produto: ").upper().strip()
+        if not nome:
+                print("Dados Inválidos. 🚨🚨")
+        else:
+            break
+        
     print("Informe a Sessão de Cadastro:")
-
     for chave, valor in tp_sessao.items():
         print(f"{chave} - {valor}")
     while True:
@@ -77,8 +82,8 @@ def cadastro_produto():
         sessoes[sessao] = [] # Inicializa a sessão como uma lista vazia
     sessoes[sessao].append({"codigo": codigo, "nome": nome, "quantidade": quantidade, "preco": preco, "validade": item.validade.strftime('%d/%m/%Y')}) # "item.validade" - Armazena como datetime, não como string
 
-    for codigo, dados in produtos.items():
-        print(f"\nCódigo: {codigo} \nItem: {dados['nome']} \nSessão: {dados['sessao']} \nQuantidade: {dados['quantidade']}\nUnid. Preço: R${dados['preco']}\nValidade: {dados['validade']}")
+    # for codigo, dados in produtos.items():
+    #     print(f"\nCódigo: {codigo} \nItem: {dados['nome']} \nSessão: {dados['sessao']} \nQuantidade: {dados['quantidade']}\nUnid. Preço: R${dados['preco']}\nValidade: {dados['validade']}")
 
 # cadastro_produto()
 
