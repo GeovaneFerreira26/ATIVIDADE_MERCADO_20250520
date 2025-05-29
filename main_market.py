@@ -26,10 +26,12 @@ while True:
             produto_market.pesquisarsessao()
         case "5":
             #vendas_market.vendasCaixa()
-            codigo, valor_total, quant_item = vendas_market.vendasCaixa()
-            
+            #codigo, valor_total, quant_item = vendas_market.vendasCaixa()
+            itens_venda = vendas_market.vendasCaixa()
+            if itens_venda:
+                cupom_market.cupom(itens_venda)
            # cupom_market.cupom(codigo, valor_total, quant_item,)
-            cupom_market.cupom(codigo, valor_total, quant_item)
+            #cupom_market.cupom(codigo, valor_total, quant_item)
 
         case "_":
             print("Opção Inválida.")
